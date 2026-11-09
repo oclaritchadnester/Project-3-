@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawFur | Pet Health Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar">
+    <a class="logo" href="#">🐾 PawFur</a>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#pets">My Pets</a>
+        <a href="#assessment">Symptom Checker</a>
+        <a href="#clinics">Find a Vet</a>
+    </nav>
+</header>
+
+<main>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p class="tagline">YOUR PET'S HEALTH COMPANION</p>
+            <h1>Because every paw<br>deserves <span>loving care.</span></h1>
+            <p class="hero-description">
+                Monitor your pet's health, record symptoms, understand possible urgency,
+                and find veterinary clinics around you.
+            </p>
+            <a class="button-link" href="#assessment">Check Your Pet's Symptoms</a>
+        </div>
+        <div class="hero-art" aria-label="Dog and cat illustration">🐶 🐱</div>
+    </section>
+
+    <section id="pets" class="section-card">
+        <h2>My Pets</h2>
+        <p class="section-description">Create a profile for your dog or cat.</p>
+
+        <form id="petForm" class="pet-form">
+            <label>Pet name
+                <input id="petName" type="text" placeholder="Enter pet name" required>
+            </label>
+            <label>Pet type
+                <select id="petType">
+                    <option value="Dog">Dog</option>
+                    <option value="Cat">Cat</option>
+                </select>
+            </label>
+            <label>Age
+                <input id="petAge" type="text" placeholder="Example: 2 years">
+            </label>
+            <button class="primary-button" type="submit">Add Pet</button>
+        </form>
+        <div id="petList" class="pet-list"></div>
+    </section>
+
+    <section id="assessment" class="section-card">
+        <h2>Pet Symptom Checker</h2>
+        <p class="section-description">Select all symptoms or changes you have noticed.</p>
+
+        <form id="symptomForm">
+            <div class="symptom-list">
+                <label><input type="checkbox" value="not eating"> Not eating</label>
+                <label><input type="checkbox" value="repeated vomiting"> Repeated vomiting</label>
+                <label><input type="checkbox" value="diarrhea"> Diarrhea</label>
+                <label><input type="checkbox" value="weakness"> Weakness</label>
+                <label><input type="checkbox" value="signs of pain"> Signs of pain</label>
+                <label><input type="checkbox" value="difficulty breathing"> Difficulty breathing</label>
+                <label><input type="checkbox" value="seizures"> Seizures</label>
+                <label><input type="checkbox" value="collapse"> Collapse</label>
+                <label><input type="checkbox" value="unconscious"> Unconscious</label>
+                <label><input type="checkbox" value="severe bleeding"> Severe bleeding</label>
+                <label><input type="checkbox" value="cannot urinate"> Cannot urinate</label>
+                <label><input type="checkbox" value="unusual behavior"> Unusual behavior</label>
+            </div>
+            <button class="primary-button" type="submit">Assess Symptoms</button>
+        </form>
+
+        <div id="assessmentResult" class="result-box hidden" aria-live="polite"></div>
+        <div id="history" class="history"></div>
+    </section>
+
+    <section id="clinics" class="section-card">
+        <h2>Find a Veterinary Clinic</h2>
+        <p class="section-description">Search Google Maps for veterinary clinics near your location.</p>
+        <form id="clinicForm" class="clinic-form">
+            <input id="location" type="text" value="Cagayan de Oro City"
+                   placeholder="Enter city, area, or address" required>
+            <button class="primary-button" type="submit">Search Clinics</button>
+        </form>
+        <p class="note">Please confirm clinic hours and contact details before visiting.</p>
+    </section>
+
+    <section class="disclaimer">
+        <strong>Health reminder:</strong> PawFur provides general information only. It does not
+        diagnose illnesses, prescribe medication, or replace a licensed veterinarian. For serious
+        symptoms, seek veterinary care immediately.
+    </section>
+</main>
+
+<footer>© 2026 PawFur | Caring for pets, one paw at a time.</footer>
+<script src="app.js"></script>
+</body>
+</html>
